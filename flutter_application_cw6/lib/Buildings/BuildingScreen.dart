@@ -10,7 +10,23 @@ class Buildingscreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(building.name),
       ),
-      body: Center(child: Image.network(building.imgURL)),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            backgroundImage: NetworkImage(
+              building.imgURL,
+            ),
+            radius: 80,
+          ),
+          Text(
+            building.name,
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          ),
+          Text(building.description)
+        ],
+      )),
     );
   }
 }
